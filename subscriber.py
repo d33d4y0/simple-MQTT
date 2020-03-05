@@ -19,20 +19,15 @@ MAX_BUF = 2048
 SERV_PORT = 50000
 
 options = arguments()
-
 serv_sock_addr = (options.broker_ip, SERV_PORT)     # Server socket address 
 cli_sock = socket(AF_INET, SOCK_DGRAM)  # Create UDP socket
-
-
 subscribe_ip = gethostbyname(gethostname())
 txtout = json.dumps({"host": subscribe_ip, "type":"subscribe", "broker_ip" : options.broker_ip, "topic" : options.topic})
-
-
-cli_sock.sendto(txtout.encode('utf-8'), serv_sock_addr) # Convert to byte type and send
+cli_sock.sendto(txtout.encode('utf-8'), serv_sock_addr)
 
 while(1):
-    Msg, srvAddr = cli_sock.recvfrom(2048) # Wait for modified text from the server
-    print (Msg.decode('utf-8'))     # Print the modified text.
+    Msg, srvAddr = cli_sock.recvfrom(2048)
+    print (Msg.decode('utf-8'))
 
 cli_sock.close()
 

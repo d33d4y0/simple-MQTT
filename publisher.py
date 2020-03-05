@@ -22,15 +22,10 @@ MAX_BUF = 2048
 SERV_PORT = 50000
 
 options = arguments()
-
 serv_sock_addr = (options.broker_ip, SERV_PORT)     # Server socket address 
 cli_sock = socket(AF_INET, SOCK_DGRAM)  # Create UDP socket
-
-
 publish_ip = gethostbyname(gethostname())
 txtout = json.dumps({"host": publish_ip, "type":"publish", "broker_ip" : options.broker_ip, "topic" : options.topic, "data" : options.data})
-
-
 cli_sock.sendto(txtout.encode('utf-8'), serv_sock_addr) # Convert to byte type and send
 
 cli_sock.close()

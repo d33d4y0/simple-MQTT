@@ -15,10 +15,9 @@ print ('Broker server started ...')
 
 topic = dict()
 subscriber = [[] for i in range(100)]
-temp = 0
+index = 0
 
 while(1):
-	
 	txtin,cli_sock_addr = serv_sock.recvfrom(MAX_BUF)  # txtin stores receive text
 	data = json.loads(txtin.decode('utf-8'))
 	if data["type"] == 'publish':
@@ -32,12 +31,10 @@ while(1):
 		print('Subscriber> ', end = '')
 		print('%s' %(data))
 		if data["topic"] not in topic:
-			topic[data["topic"]] = temp
-			print(topic[data["topic"]])
+			topic[data["topic"]] = index
 			subscriber[topic[data["topic"]]].append(cli_sock_addr)
-			temp+=1
+			index+=1
 		elif data["topic"] in topic:
 			subscriber[topic[data["topic"]]].append(cli_sock_addr)
-	 
-
+			
 serv_sock.close()
