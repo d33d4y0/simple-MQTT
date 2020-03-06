@@ -20,15 +20,15 @@ Publish data
 ./publisher.py -b [ip of broker] -d [data] -t [topic]
 ```
 ## Example
-> At first terminal
+At first terminal
 ```
 ./broker
 ```
-> At second terminal
+At second terminal
 ```
 ./subscriber.py -b 127.0.0.1 -t test
 ```
-> At third terminal
+At third terminal
 ```
 ./publisher.py -b 127.0.0.1 -t test -d message
 ```
