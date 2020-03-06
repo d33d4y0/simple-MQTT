@@ -1,11 +1,11 @@
 # simple-MQTT
 > This repository use to store a network project of CPE314 course at KMUTT 
 ## Broker
-> acting as a server for receiving and passing data from publisher and subscriber
+- A Broker act as a server for receiving and passing data from publisher and subscriber
 ## Subscriber
-> A Subscriber responsible for subscribing any topic and waiting for publisher sent data that have the same topic
+- A Subscriber responsible for subscribing any topic and waiting for publisher sent data that have the same topic
 ## Publisher
-> A Publisher responsible for publish any topic and data to a broker server
+- A Publisher responsible for publish any topic and data to a broker server
 ## How to use
 Running a Broker
 ```
