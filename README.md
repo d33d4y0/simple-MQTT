@@ -22,7 +22,7 @@ Publish data
 ## Example
 At first terminal
 ```
-./broker
+./broker.py
 ```
 At second terminal
 ```
