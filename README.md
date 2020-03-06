@@ -7,7 +7,7 @@
 ## Publisher
 > A Publisher responsible for publish any topic and data to a broker server
 ## How to use
-running a Broker
+Running a Broker
 ```
 ./broker.py 
 ```
