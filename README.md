@@ -1,5 +1,5 @@
 # simple-MQTT
-> This repository use to store a network project of CPE314 course at KMUTT 
+> This repository uses to store a network project for the CPE314 course at KMUTT
 ## Broker
 - A Broker act as a server for receiving and passing data from publisher and subscriber
 ## Subscriber
